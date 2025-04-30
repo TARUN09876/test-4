@@ -202,7 +202,8 @@
      
      // Realloc leaks
      int* numbers = (int*)malloc(10 * sizeof(int));
-     for (int i = 0; i < 10; i++) numbers[i] = i;
+     for (int i = 0; i < 10; i++) 
+      numbers[i] = i;
      
      // Leak the original and the new allocation
      numbers = (int*)realloc(numbers, 20 * sizeof(int)); // Original might leak if realloc moves it
